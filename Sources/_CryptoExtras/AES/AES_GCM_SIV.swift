@@ -131,7 +131,6 @@ extension AES.GCM._SIV {
             return try! AES.GCM._SIV.Nonce(data: combined.prefix(AES.GCM._SIV.nonceByteCount))
         }
 
-        @inlinable
         public init<D: DataProtocol>(combined: D) throws {
             // AES minimum nonce (12 bytes) + AES tag (16 bytes)
             // While we have these values in the internal APIs, we can't use it in inlinable code.
